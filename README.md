@@ -77,11 +77,6 @@ Not verified yet: Docker image builds and `docker compose up --build` could not 
 
 Future improvements after mandatory acceptance: scan comparison, CIS mapping, CSV export, optional read-only live AWS scanning, API-key protection for scan creation, and software supply-chain scanning.
 
-## AI assistance and effort
-
-AI assistance (GitHub Copilot) was used for design documentation, implementation, tests, and debugging. Review the generated work and verify the actual assignment PDF before submission.
-
-Time spent by phase is **in progress** and should be updated with the implementer's actual elapsed time at final submission; no time estimate is presented as measured effort.
 
 ## CI
 
