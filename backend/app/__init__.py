@@ -1,0 +1,1 @@
+"""Mini Gauntlet backend package."""
