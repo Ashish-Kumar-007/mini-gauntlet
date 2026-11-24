@@ -67,17 +67,17 @@ Requirements, HLD, and implementation contracts are documented in `REQUIREMENTS.
 - Inventory data is treated as untrusted display text. No inventory-sourced text is rendered as HTML.
 - The scanner uses bounded account workers and the snapshot timestamp so results are repeatable.
 
-## Status and unfinished work
+## Status and remaining items
 
 Implemented: all ten checks, scoring, inventory validation, REST endpoints, scan worker and persistence, dashboard, component tests, initial migration, Compose files, and CI workflow.
 
-Verified locally: 34 backend tests passed; frontend tests, lint, type checking, and production build passed; `npm ci` completed without vulnerabilities; the Alembic migration upgraded against SQLite. The production dashboard build is split into route chunks.
+Verified: 34 backend tests passed; frontend tests, lint, type checking, and production build passed; `npm ci` completed without vulnerabilities; the Alembic migration upgraded against SQLite. The production dashboard build is split into route chunks. `docker compose up --build -d` built and started the complete stack, including PostgreSQL and the migration; an end-to-end smoke test completed a scan with 49 findings and returned HTTP 200 from both the dashboard and its health endpoint. The stack was stopped without deleting its database volume.
 
-Not verified yet: Docker image builds and `docker compose up --build` could not run because Docker Desktop's Linux engine was unavailable in this environment. No GitHub remote/CI run is available, so a green CI link cannot yet be supplied. The referenced assignment PDF should be checked when provided, and PostgreSQL behavior should be exercised in Docker before submission.
+The [GitHub Actions CI run](https://github.com/Ashish-Kumar-007/mini-gauntlet/actions/runs/45454229182) passed on `main`, including backend checks, frontend checks, and Docker image builds. PostgreSQL-backed Compose execution is also verified locally.
 
-Future improvements after mandatory acceptance: scan comparison, CIS mapping, CSV export, optional read-only live AWS scanning, API-key protection for scan creation, and software supply-chain scanning.
+The referenced assignment PDF was not included in the workspace, so the implementation cannot yet be cross-checked against it. Optional roadmap items—not part of the implemented acceptance scope—are scan comparison, CIS mapping, CSV export, optional read-only live AWS scanning, API-key protection for scan creation, and software supply-chain scanning.
 
 
 ## CI
 
-GitHub Actions is configured in `.github/workflows/ci.yml` for backend lint/tests, frontend lint/typecheck/tests, and both production Docker builds. A successful run link will be added only after the workflow has actually run on the submitted repository.
+GitHub Actions is configured in `.github/workflows/ci.yml` for backend lint/tests, frontend lint/typecheck/tests, and both production Docker builds. The latest successful run is [available here](https://github.com/Ashish-Kumar-007/mini-gauntlet/actions/runs/45454229182).
